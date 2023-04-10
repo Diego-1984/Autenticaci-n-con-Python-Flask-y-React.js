@@ -15,4 +15,17 @@ def handle_hello():
         "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
     }
 
-    return jsonify(response_body), 200
+    @api.route('/signup', methods=['POST'])
+    def create_new_user():
+        email = request.json.get('email', None)
+        password = request.json.get('password', None)
+        is_active = request.json.get('is_active', True)
+        
+        user=User(email=email, password=password, is_active=is_active)
+        db.session.add(user)
+        db.session.commit()
+        response_body={
+            "message": "all ok"
+        }
+
+        return jsonify(response_body), 200
