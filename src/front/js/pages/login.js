@@ -7,6 +7,7 @@ export const Login = () => {
 
 	return (
 		<div className="text-center mt-5">
+			<h1>LOGIN</h1>
 			<input type="text" placeholder="e-mail"></input>
 			<input type="pasword" placeholder="pasword"></input>
 			<button>Login</button>

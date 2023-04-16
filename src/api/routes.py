@@ -26,6 +26,16 @@ def handle_hello():
         db.session.commit()
         response_body={
             "message": "all ok"
+    
         }
 
         return jsonify(response_body), 200
+
+    @api.route('/login', methods=['POST'])
+    def login_user():
+        email = request.json.get('email', None)
+        password = request.json.get('password', None)
+
+    @api.route('/private', methods=['GET'])
+    def private_route():
+       

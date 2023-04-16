@@ -1,16 +1,15 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 
-export const Singup = () => {
+export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<div className="text-center mt-5">
-			<h1>SINGUP</h1>
-			<input type="text" placeholder="e-mail"></input>
-			<input type="pasword" placeholder="pasword"></input>
-			<button>Singup</button>
+			<h1>PRIVATE</h1>
+			
 		</div>
 	);
 };
