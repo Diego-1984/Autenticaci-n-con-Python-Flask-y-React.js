@@ -8,7 +8,7 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Login } from "./pages/login";
 import { Singup } from "./pages/singup";
-import { Private } from "./pages/singup"
+import  Private  from "./pages/private"
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";

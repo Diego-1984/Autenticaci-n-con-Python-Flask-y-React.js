@@ -1,11 +1,11 @@
-import React, { useContext , useState} from "react";
+import React, { useState } from "react";
 import "../../styles/home.css";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
 	const navigate = useNavigate()
 	const [email, setEmail] = useState("")
-	const [pasword, setPasword] = useState("")
+	const [password, setPassword] = useState("")
 	const handelClick =()=>{
 		fetch(process.env.BACKEND_URL + "api/login",{
             method:'POST',
@@ -33,7 +33,7 @@ export const Login = () => {
 		<div className="text-center mt-5">
 			<h1>LOGIN</h1>
 			<input type="text" onChange={(e)=>{setEmail(e.target.value)}} placeholder="e-mail"></input>
-			<input type="pasword" onChange={(e)=>{setPasword(e.target.value)}}placeholder="pasword"></input>
+			<input type="pasword" onChange={(e)=>{setPassword(e.target.value)}}placeholder="pasword"></input>
 			<button onClick={handelClick()}>Login</button>
 		</div>	
 		</>
