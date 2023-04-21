@@ -22,7 +22,7 @@ export const Singup = () => {
             if (response.message=="all ok"){
                 navigate("/login")
             } else {
-                alert("Something went wrong")
+                alert("Usuario o contraseña incorrectos")
             }
         })
     	}
@@ -30,7 +30,7 @@ export const Singup = () => {
 	return (
 		<>
 		<div className="text-center mt-5">
-			<h1>Singup</h1>
+			<h1>SINGUP</h1>
 			<input type="text" onChange={(e)=>{setEmail(e.target.value)}} placeholder="e-mail"></input>
 			<input type="pasword" onChange={(e)=>{setPassword(e.target.value)}}placeholder="pasword"></input>
 			<button onClick={handelClick()}>Singup</button>
