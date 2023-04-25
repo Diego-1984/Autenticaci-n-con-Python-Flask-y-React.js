@@ -30,19 +30,19 @@ def login_user():
     email = request.json.get('email', None)
     password = request.json.get('password', None)
 
-    user = User.query.filter (email = email, password = password).firts()
+    user = User.query.filter_by(email=email, password=password).first()
     if user is None:
             # user no se encuentra en la base de datos
         return jsonify({"mensage":"error en usuario y/o password"}), 401
 
     # crear un nuevo token con el usuario encontrado en la base de datos
-    access_token = create_access_token (identify = user.id)
+    access_token = create_access_token (identity = user.id)
     return jsonify({ "token" : access_token}), 200
 
 @api.route('/private', methods = ['GET'])
 @jwt_required()
 def go_to_private():
-    users = Users.query.all()
+    users = User.query.all()
     users = [user.serialize() for users in users]
     return jsonify({ "users" : users}), 200
 

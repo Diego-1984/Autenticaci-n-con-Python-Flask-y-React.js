@@ -7,7 +7,7 @@ export const Singup = () => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 	const handelClick =()=>{
-		fetch(process.env.BACKEND_URL + "api/singup",{
+		fetch(process.env.BACKEND_URL + "/api/signup",{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -30,10 +30,10 @@ export const Singup = () => {
 	return (
 		<>
 		<div className="text-center mt-5">
-			<h1>SINGUP</h1>
+			<h1>SIGNUP</h1>
 			<input type="text" onChange={(e)=>{setEmail(e.target.value)}} placeholder="e-mail"></input>
 			<input type="pasword" onChange={(e)=>{setPassword(e.target.value)}}placeholder="pasword"></input>
-			<button onClick={handelClick()}>Singup</button>
+			<button onClick={handelClick}>Signup</button>
 		</div>	
 		</>
 	);
